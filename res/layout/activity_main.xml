@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res/it.moondroid.customview.example"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <it.moondroid.customview.example.CustomView
+        android:id="@+id/mycustomview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        custom:text="@string/hello_world" />
+
+    <Button
+        android:id="@+id/buttonSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mycustomview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Change Size" />
+
+</RelativeLayout>
