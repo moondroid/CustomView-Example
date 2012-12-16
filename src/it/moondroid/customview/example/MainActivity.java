@@ -17,7 +17,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		
 		myView = (CustomView)findViewById(R.id.mycustomview);
-//		myView.setText("Marco");
 		
 		Button btnSize = (Button)findViewById(R.id.buttonSize);
 		btnSize.setOnClickListener(this);

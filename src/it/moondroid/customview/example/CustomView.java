@@ -10,6 +10,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 public class CustomView extends View {
@@ -257,5 +258,50 @@ public class CustomView extends View {
 	 */
 	public float getTextSize(){
 		return textSize;
+	}
+	
+	
+	// override onTouchEvent to handle touch events on the custom view
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+
+		// Get the type of action this event represents
+		int action = event.getAction();
+		
+		switch (action){
+		
+		
+		
+		case MotionEvent.ACTION_DOWN:
+			// Touch screen pressed
+			float initX = event.getX();
+			float initY = event.getY();
+			return true;
+		
+		case MotionEvent.ACTION_MOVE:
+			// Contact has moved across screen
+			float x = event.getX();
+			float y = event.getY();
+			return true;
+			
+		case MotionEvent.ACTION_UP:
+			// Touch screen touch ended
+			float finalX = event.getX();
+			float finalY = event.getY();
+			return true;
+		
+		case (MotionEvent.ACTION_CANCEL):
+			// Touch event cancelled
+			return true;
+		
+		case (MotionEvent.ACTION_OUTSIDE):
+			// Movement has occurred outside the
+			// bounds of the current screen element
+			return true;
+		}
+		
+		
+		// return false if the event is not handled, true otherwise
+		return false;
 	}
 }
